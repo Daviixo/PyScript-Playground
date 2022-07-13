@@ -1,40 +1,50 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="en">
 
 <head>
-
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!--<link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />-->
     <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
 
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/styles.css">
+
+    <title>PyScript - Playground</title>
+
 </head>
 
 <body>
-  <div>Type a sample input here</div>
-  <input type="text" id="test-input"/>
-  <button id="submit-button" type="submit" pys-onClick="my_function">OK</button>
-  <br><br>
-  <div id="test-output"></div>
-
-<py-script>
-from js import console
-
-def my_function(*args, **kwargs):
-
-    #print('args:', args)
-    #print('kwargs:', kwargs)
-
-    #console.log(f'args: {args}')
-    #console.log(f'kwargs: {kwargs}')
     
-    text = Element('test-input').element.value
+    <form onsubmit="return false">
 
-    #print('text:', text)
-    console.log(f'text: {text}')
 
-    Element('test-output').element.innerText = text
-</py-script>
+        <label for="exampleFormControlInput1" class="form-label">Type your input here</label>
+        <input type="text" class="form-control" id="test-input" placeholder="12345"><br>
+        <button class="btn btn-dark" id="submit-button" pys-onClick="my_function">Submit</button><br><br>
 
-  </body>
+        <div class="noclass" id="test-output"></div>
+    </form>
+
+    <py-script>
+        from js import console
+
+        def my_function(*args, **kwargs):
+
+            text = Element('test-input').element.value
+
+            #print('text:', text)
+            console.log(f'text: {text}')
+
+            pyscript.write('test-output', text)
+
+    </py-script>
+
+</body>
+
 </html>
