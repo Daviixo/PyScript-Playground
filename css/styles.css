@@ -13,8 +13,7 @@
 
 body {
     text-align: center;
-    /*background-image: url('/img/wp.jpg'); */
-    background-image: url('https://coolwallpapers.me/picsup/2724968-lion-4k-pictures-desktop.jpg');
+    background-image: url('/img/wp.jpg'); 
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -32,5 +31,5 @@ form {
     border-radius: 2% 6% 5% 4% / 1% 1% 2% 4%;
     text-transform: uppercase;
     letter-spacing: 0.3ch;
-    background: #ffffff;
+    background: #b8b8b8b6;
 }

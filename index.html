@@ -17,6 +17,11 @@
 
     <title>PyScript - Playground</title>
 
+    <py-env>
+        - paths:
+          - /helloWorld.py
+    </py-env>
+
 </head>
 
 <body>
@@ -27,12 +32,17 @@
         <label for="exampleFormControlInput1" class="form-label">Type your input here</label>
         <input type="text" class="form-control" id="test-input" placeholder="12345"><br>
         <button class="btn btn-dark" id="submit-button" pys-onClick="my_function">Submit</button><br><br>
-
+        <button class="btn btn-dark" id="submit-button" pys-onClick="my_function_two">Submit 2</button><br><br>
+        <h1>Let's print random numbers</h1>
+        <b>Daviixo's lucky number is <label id="lucky"></label></b>
+        <br><h1>-------------</h1>
         <div class="noclass" id="test-output"></div>
+
     </form>
 
     <py-script>
         from js import console
+        from helloWorld import generate_random_number
 
         def my_function(*args, **kwargs):
 
@@ -43,7 +53,11 @@
 
             pyscript.write('test-output', text)
 
+        def my_function_two(*args, **kwargs):
+            pyscript.write('lucky', generate_random_number())
+
     </py-script>
+
 
 </body>
 
